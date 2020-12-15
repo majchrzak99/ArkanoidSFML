@@ -4,11 +4,8 @@
 #include <SFML/Main.hpp>
 #include <string>
 #include "../src/Ui/GameRenderer/GameRenderer.h"
-#include "../src/Ui/Common/Enums/GameState.h"
 #include "../src/Ui/Common/Renderer/Renderer.h"
 #include "../src/Ui/MenuRenderer/MenuRenderer.h"
-//#include "../src/Ui/MenuRenderer/MenuRenderer.h"
-//#include "../src/Ui/GameRenderer/GameRenderer.h"
 #include "../src/Ui/GameSettingsRenderer/GameSettingsRenderer.h"
 
 namespace Arkanoid
@@ -17,7 +14,6 @@ namespace Arkanoid
 	{
 	private:
 		sf::RenderWindow _window;
-		//GameState _state;
 		Renderer* _renderer;
 
 
@@ -26,6 +22,5 @@ namespace Arkanoid
 		Window();
 		~Window();
 		void Run();
-		//void RenderFrame();
 	};
 }

@@ -141,6 +141,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Infrastructure\Common\TypeBinder.cpp" />
+    <ClCompile Include="src\Application\GameSettings\GameSettings.cpp" />
     <ClCompile Include="src\Ui\MenuRenderer\MenuRenderer.cpp" />
     <ClCompile Include="src\Ui\GameSettingsRenderer\GameSettingsRenderer.cpp" />
     <ClCompile Include="src\Ui\GameRenderer\GameRenderer.cpp" />
@@ -150,19 +152,26 @@
     <ClCompile Include="src\Application\Game\Game.cpp" />
     <ClCompile Include="src\Application\Platform\Platform.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Infrastructure\StageReader\StageReader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Application\Brick\BrickState.h" />
+    <ClInclude Include="src\Application\GameSettings\GameSettings.h" />
+    <ClInclude Include="src\Application\Common\Abstractions\StageLoader.h" />
+    <ClInclude Include="src\Application\Common\Enums\MoveDirection.h" />
+    <ClInclude Include="src\Infrastructure\Common\TypeBinder.h" />
     <ClInclude Include="src\Ui\MenuRenderer\MainMenu.h" />
     <ClInclude Include="src\Ui\Common\Renderer\Renderer.h" />
     <ClInclude Include="src\Ui\MenuRenderer\MenuRenderer.h" />
     <ClInclude Include="src\Ui\GameSettingsRenderer\GameSettingsRenderer.h" />
     <ClInclude Include="src\Ui\GameRenderer\GameRenderer.h" />
-    <ClInclude Include="src\Ui\Common\Enums\GameState.h" />
+    <ClInclude Include="src\Application\Common\Enums\GameState.h" />
     <ClInclude Include="src\Ui\MainWindow\MainWindow.h" />
     <ClInclude Include="src\Application\Ball\Ball.h" />
     <ClInclude Include="src\Application\Brick\Brick.h" />
     <ClInclude Include="src\Application\Game\Game.h" />
     <ClInclude Include="src\Application\Platform\Platform.h" />
+    <ClInclude Include="src\Infrastructure\StageReader\StageReader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

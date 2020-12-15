@@ -9,7 +9,6 @@ namespace Arkanoid
 		this->_window.setVerticalSyncEnabled(true);
 
 		this->_renderer = new MenuRenderer(&(this->_window));
-		//this->_state = GameState::Menu;
 	}
 
 	Window::~Window() {
@@ -45,7 +44,6 @@ namespace Arkanoid
 		sf::Texture texture;
 		texture.loadFromFile(bgPath);
 		texture.setSmooth(true);
-		//texture.setRepeated(true);
 
 		sf::Sprite background(texture);
 

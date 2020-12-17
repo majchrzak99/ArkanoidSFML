@@ -6,6 +6,7 @@
 #include "../src/Application/GameSettings/GameSettings.h"
 #include "../src/Application/Common/Abstractions/StageLoader.h"
 #include "../src/Infrastructure/Common/TypeBinder.h"
+#include "../src/Application/Common/Enums/MoveDirection.h"
 
 namespace Arkanoid
 {
@@ -18,6 +19,9 @@ namespace Arkanoid
 		short _lives;
 		long _points;
 		StageLoader* _stageLoader;
+		void CheckCollisions();
+		void MovePlatform();
+		void MoveBalls();
 	public:
 		const float MatrixWidth = 24.0f;
 		const float MatrixHeight = 10.0f;
@@ -27,7 +31,8 @@ namespace Arkanoid
 		Game();
 		~Game();
 		void LoadStage(int stageId);
-		void DoCollisions();
+		void SetPlatformDirection(HorizontalMoveDirection direction);
+		void CalculateFrame();
 	};
 
 

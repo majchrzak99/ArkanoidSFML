@@ -11,7 +11,11 @@ namespace Arkanoid
 		float _width;
 	public:
 		Platform();
+		Platform(float width, float position);
 		float GetPosX();
 		float GetWidth();
+		float GetSpeed();
+		void Move( float posX);
+		HorizontalMoveDirection MoveDirection;
 	};
 }

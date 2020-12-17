@@ -11,7 +11,9 @@ namespace Arkanoid
 		Game _game;
 		void drawBricks(float maxWidth, float maxHeight);
 		void drawPlatform(float maxWidth, float maxHeight);
-		void drawBalls();
+		void drawBalls(float maxWidth, float maxHeight);
+		sf::Mutex _mutex;
+		sf::Thread* _evThread;
 	public:
 		GameRenderer(sf::RenderWindow* window);
 		Renderer* Render();

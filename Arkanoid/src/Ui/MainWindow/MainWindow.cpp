@@ -5,10 +5,11 @@ namespace Arkanoid
 
 	Window::Window()
 	{
-		this->_window.create(sf::VideoMode(1920, 1080), "Arkanoid", sf::Style::Default | sf::Style::Fullscreen);
+		this->_window.create(sf::VideoMode(1920, 1080), "Arkanoid", sf::Style::Default /*| sf::Style::Fullscreen*/);
 		this->_window.setVerticalSyncEnabled(true);
 
 		this->_renderer = new MenuRenderer(&(this->_window));
+		//this->_renderThread = new sf::Thread(this->_renderer->Render(),this->_renderer);
 	}
 
 	Window::~Window() {
@@ -30,8 +31,10 @@ namespace Arkanoid
 
 				this->_renderer->PollEvents(event);
 			}
+	
 			this->setBackground("assets/background.jpg");
 			this->_renderer = this->_renderer->Render();
+
 			this->_window.display();
 		}
 	}

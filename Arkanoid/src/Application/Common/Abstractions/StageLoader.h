@@ -10,8 +10,12 @@ namespace Arkanoid {
 	};
 
 	class StageLoader {
-		public:
-			virtual std::vector<BrickDto> GetBrickSetup(int stageId) = 0;
+	protected:
+		short MaxWidth = 12;
+		short MaxHeight = 8;
+	public:
+		virtual std::vector<BrickDto> GetBrickSetup(int stageId) = 0;
+		virtual short GetTotalStagesCount() = 0;
 	};
 
 }

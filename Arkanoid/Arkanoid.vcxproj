@@ -131,6 +131,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,6 +142,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Application\Common\CollisionChecker\CollisionChecker.cpp" />
+    <ClCompile Include="src\Application\Common\Exceptions\Exception.cpp" />
     <ClCompile Include="src\Infrastructure\Common\TypeBinder.cpp" />
     <ClCompile Include="src\Application\GameSettings\GameSettings.cpp" />
     <ClCompile Include="src\Ui\MenuRenderer\MenuRenderer.cpp" />
@@ -155,7 +158,9 @@
     <ClCompile Include="src\Infrastructure\StageReader\StageReader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Application\Common\CollisionChecker\CollisionChecker.h" />
     <ClInclude Include="src\Application\Brick\BrickState.h" />
+    <ClInclude Include="src\Application\Common\Enums\CollisionType.h" />
     <ClInclude Include="src\Application\GameSettings\GameSettings.h" />
     <ClInclude Include="src\Application\Common\Abstractions\StageLoader.h" />
     <ClInclude Include="src\Application\Common\Enums\MoveDirection.h" />

@@ -7,15 +7,19 @@ namespace Arkanoid
 	{
 	private:
 		float _posX;
+		float _posY;
 		float _speed;
 		float _width;
+		float _height;
 	public:
 		Platform();
-		Platform(float width, float position);
+		Platform(float width, float height, float positionX, float positionY);
 		float GetPosX();
+		float GetPosY();
 		float GetWidth();
+		float GetHeight();
 		float GetSpeed();
-		void Move( float posX);
+		void Move(float posX);
 		HorizontalMoveDirection MoveDirection;
 	};
 }

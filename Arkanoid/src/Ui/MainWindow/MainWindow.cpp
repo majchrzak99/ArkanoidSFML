@@ -5,7 +5,7 @@ namespace Arkanoid
 
 	Window::Window()
 	{
-		this->_window.create(sf::VideoMode(1920, 1080), "Arkanoid", sf::Style::Default /*| sf::Style::Fullscreen*/);
+		this->_window.create(sf::VideoMode(1280, 720), "Arkanoid", sf::Style::Default /*| sf::Style::Fullscreen*/);
 		this->_window.setVerticalSyncEnabled(true);
 
 		this->_renderer = new MenuRenderer(&(this->_window));
@@ -28,10 +28,18 @@ namespace Arkanoid
 			{
 				if (event.type == sf::Event::Closed)
 					this->_window.close();
+				if (event.type == sf::Event::Resized)
+				{
+					sf::View view = this->_window.getDefaultView();
+					view.setSize(event.size.width, event.size.height);
+					view.reset(sf::FloatRect(0.0f, 0.0f, event.size.width, event.size.height));
+					//view.setViewport(sf::FloatRect(0.0f, 0.0f, event.size.width, event.size.height));
+					this->_window.setView(view);
+				}
 
 				this->_renderer->PollEvents(event);
 			}
-	
+
 			this->setBackground("assets/background.jpg");
 			this->_renderer = this->_renderer->Render();
 

@@ -4,11 +4,13 @@ namespace Arkanoid
 {
 	class Brick
 	{
+		float _width = 2.0f;
+		float _height = 1.0f;
 	public:
 		BrickState State;
 		float PosX;
 		float PosY;
-		const float Width = 2.0f;
-		const float Height = 1.0f;
+		float GetWidth();
+		float GetHeight();
 	};
 }

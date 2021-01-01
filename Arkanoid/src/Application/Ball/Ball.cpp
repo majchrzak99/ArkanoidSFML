@@ -8,16 +8,18 @@ namespace Arkanoid {
 		this->_vSpeed = 0.20f;
 		this->_hSpeed = 0.20f;
 		this->_radius = 0.0f;
+		this->CanChangeDirection = true;
 		this->HorizontalDirection = HorizontalMoveDirection::Right;
 		this->VerticalDirection = VerticalMoveDirection::Up;
 	}
-	Ball::Ball(float radius, float posX, float posY)
+	Ball::Ball(float radius, float posX, float posY, float speed)
 	{
 		this->_posX = posX;
 		this->_posY = posY;
-		this->_vSpeed = 0.20f;
-		this->_hSpeed = 0.20f;
+		this->_vSpeed = speed;
+		this->_hSpeed = speed;
 		this->_radius = radius;
+		this->CanChangeDirection = true;
 		this->HorizontalDirection = HorizontalMoveDirection::Right;
 		this->VerticalDirection = VerticalMoveDirection::Up;
 	}
@@ -37,6 +39,16 @@ namespace Arkanoid {
 		return this->_hSpeed;
 	}
 
+	void Ball::SetVerticalSpeed(float speed)
+	{
+		this->_vSpeed = speed;
+	}
+
+	void Ball::SetHorizontalSpeed(float speed)
+	{
+		this->_hSpeed = speed;
+	}
+
 	float Ball::GetPosX()
 	{
 		return this->_posX;
@@ -50,6 +62,12 @@ namespace Arkanoid {
 	float Ball::GetRadius()
 	{
 		return this->_radius;
+	}
+
+	void Ball::IncreaseSpeed()
+	{
+		this->_hSpeed += 0.002;
+		this->_vSpeed += 0.001;
 	}
 
 }

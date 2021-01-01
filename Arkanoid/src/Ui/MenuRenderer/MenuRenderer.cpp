@@ -126,6 +126,10 @@ namespace Arkanoid {
 		case MenuOption::NewGame: {
 			return new GameRenderer(this->_window);
 		}
+		case MenuOption::Exit: {
+			this->_window->close();
+			return nullptr;
+		}
 		default:
 			return this;
 		}

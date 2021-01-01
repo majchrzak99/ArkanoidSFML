@@ -3,8 +3,10 @@ namespace Arkanoid
 {
 	enum class GameState
 	{
-		Menu = 0,
-		Settings = 1,
-		Game = 2,
+		None = 0,
+		Active = 1,
+		Paused = 2,
+		GameOver = 3,
+		Win = 4
 	};
 }

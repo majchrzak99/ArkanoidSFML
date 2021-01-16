@@ -1,6 +1,7 @@
 #pragma once
 namespace Arkanoid
 {
+	///describes a state of game
 	enum class GameState
 	{
 		None = 0,

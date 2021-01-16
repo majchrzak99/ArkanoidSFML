@@ -2,7 +2,8 @@
 //#include "../src/Ui/Common/Enums/RendererState.h"
 #include <SFML/Window.hpp>
 
-namespace Arkanoid {
+namespace Arkanoid 
+{
 	class Renderer {
 	protected:
 		sf::RenderWindow* _window;

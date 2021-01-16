@@ -3,11 +3,12 @@
 
 namespace Arkanoid
 {
-
+	///Class used to check collision
 	static class CollisionChecker
 	{
 	public:
 #pragma region shape structs
+		///describes single point on graph
 		struct Point
 		{
 			float X;
@@ -23,6 +24,7 @@ namespace Arkanoid
 			}
 
 		};
+		///describes rectangle on graph using points
 		struct Rectangle
 		{
 			Point LeftBottom;
@@ -34,6 +36,7 @@ namespace Arkanoid
 				RightTop = rightTop;
 			}
 		};
+		///describes circle on graph
 		struct Circle
 		{
 			Point Center;
@@ -45,7 +48,9 @@ namespace Arkanoid
 			}
 		};
 #pragma endregion
-
+		///Check if rectangle collide with circle
+		///param rect rectangle cords
+		///param circle rectangle cords
 		static CollisionType CheckCollision(Rectangle rect, Circle circle);
 	};
 }

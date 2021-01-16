@@ -15,6 +15,7 @@
 
 namespace Arkanoid
 {
+	///Game object
 	class Game
 	{
 	private:
@@ -32,21 +33,37 @@ namespace Arkanoid
 		void MoveBalls();
 		void ChangeBallDirectionsByCollision(Ball* ball, CollisionType type);
 	public:
-		const float MatrixWidth = 24.0f;
-		const float MatrixHeight = 10.0f;
-		std::vector<Ball> GetBalls();
-		std::vector<Brick> GetBricks();
+		const float MatrixWidth = 24.0f; ///Width of game space
+		const float MatrixHeight = 10.0f;///Height of game space
+		///balls getter
+		std::vector<Ball> GetBalls(); 
+		///brick getter
+		std::vector<Brick> GetBricks(); 
+		///state getter
 		GameState GetState();
+		///platform getter
 		Platform GetPlatform();
+		///default constructor
 		Game();
+		///default destructor
 		~Game();
+		///load stage bricks setup to game
+		///param stageId stage number
 		void LoadStage(int stageId);
+		/// changes direction of platform
+		/// param direction new direction of a platform
 		void SetPlatformDirection(HorizontalMoveDirection direction);
+		/// makes collision and other calculations on single step of game
 		void CalculateFrame();
+		/// gets ball moving, when any speed is equal 0
 		void RunInactiveBalls();
+		/// stops calculating frame
 		void Pause();
+		/// resume calculating frame
 		void Resume();
+		/// pints getter
 		unsigned long GetPoints();
+		/// lives getter
 		int GetLives();
 	};
 }

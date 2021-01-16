@@ -8,6 +8,7 @@
 
 namespace Arkanoid
 {
+	/// stage loader implementation
 	class StageReader : public StageLoader
 	{
 		const std::string _path = "stages/";

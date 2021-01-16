@@ -3,6 +3,7 @@
 #include <string>
 namespace Arkanoid 
 {
+	///Defines a exception thrown when stage cannot be found
 	struct StageNotFoundException : public std::exception
 	{
 		const std::string Message() const throw() {

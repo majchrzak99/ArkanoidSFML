@@ -90,8 +90,13 @@ namespace Arkanoid {
 		points.setPosition(sf::Vector2<float>(position.x,position.y + 40));
 		points.setString("Punkty: " + std::to_string(this->_game.GetPoints()));
 
+		sf::RectangleShape line(sf::Vector2<float>(5.0f,size.y));
+		line.setPosition(size.x - 5.0f, position.y);
+		line.setFillColor(sf::Color::Black);
+
 		this->_window->draw(lifes);
 		this->_window->draw(points);
+		this->_window->draw(line);
 	}
 
 	GameRenderer::GameRenderer(sf::RenderWindow *window)
@@ -115,7 +120,7 @@ namespace Arkanoid {
 			this->drawBricks(gameSize, gamePosition);
 			this->drawPlatform(gameSize, gamePosition);
 			this->drawBalls(gameSize, gamePosition);
-			this->drawInfo(gameSize, infoPosition);
+			this->drawInfo(infoSize, infoPosition);
 		}
 
 		if (this->_canReturnToMenu)

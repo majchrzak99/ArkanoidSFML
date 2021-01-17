@@ -17,9 +17,9 @@ namespace Arkanoid {
 
 
 			sf::RectangleShape rectangle(sf::Vector2<float>(brickWidth, brickHeight));
-			rectangle.setFillColor(sf::Color::Red);
-			/*rectangle.setOutlineThickness(2.0f);
-			rectangle.setOutlineColor(sf::Color::Black);*/
+			rectangle.setFillColor(sf::Color(186,70,60,255));
+			rectangle.setOutlineThickness(1.0f);
+			rectangle.setOutlineColor(sf::Color::Black);
 			rectangle.setPosition(brickPosX, brickPosY);
 
 			this->_window->draw(rectangle);
@@ -40,6 +40,7 @@ namespace Arkanoid {
 		float height = platform.GetHeight() * scaleY;
 
 		sf::RectangleShape rectangle(sf::Vector2<float>(width, height));
+		rectangle.setFillColor(sf::Color(134, 87, 83, 255));
 		rectangle.setPosition(posX, posY);
 		this->_window->draw(rectangle);
 	}
@@ -58,7 +59,6 @@ namespace Arkanoid {
 
 			sf::CircleShape circle(ballRadius, 64);
 			circle.setPosition(ballPosX, ballPosY);
-			circle.setFillColor(sf::Color::Blue);
 			this->_window->draw(circle);
 		}
 	}
